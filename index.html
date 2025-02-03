@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Seatwork 2</title>
+
+  <style>
+
+    body {
+      background-image: url('purplemath.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .container {
+            width: 300px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+    }
+
+    input {
+      margin: 5px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Let's test your Math skill!</h1>
+  <p>Enter a value for <strong>a</strong>:</p>
+  <input type="number" id="a" placeholder=":)">
+  
+  <p>Enter a value for <strong>b</strong>:</p>
+  <input type="number" id="b" placeholder=":)">
+
+  <p><strong>Answer:</strong></p>
+  <p id="result"></p>
+
+</div>
+
+  <br><br>
+  
+  <button onclick="Product()">product of a and b</button>
+  <button onclick="Power()">a raise to b</button>
+  <button onclick="Remainder()">get the remainder</button>
+  <button onclick="Equality()">check if a is equal to b</button>
+  
+  <script>
+    function Product() {
+      let valA = Number(document.getElementById("a").value);
+      let valB = Number(document.getElementById("b").value);
+      document.getElementById("result").innerText = valA * valB;
+    }
+
+    function Power() {
+      let valA = Number(document.getElementById("a").value);
+      let valB = Number(document.getElementById("b").value);
+
+      document.getElementById("result").innerText = Math.pow(valA, valB);
+
+    }
+
+    function Remainder() {
+      let valA = Number(document.getElementById("a").value);
+      let valB = Number(document.getElementById("b").value);
+
+      document.getElementById("result").innerText = valA % valB;
+    }
+
+    function Equality() {
+      let valA = Number(document.getElementById("a").value);
+      let valB = Number(document.getElementById("b").value);
+      if (valA === valB) {
+        document.getElementById("result").innerText = "a is equal to b";
+      } else {
+        document.getElementById("result").innerText = "a is not equal to b";
+      }
+    }
+  </script>
+</body>
+</html>
